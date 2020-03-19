@@ -122,7 +122,7 @@ class LogisticRegression:
         if X_valid is not None:
             self.w = bstf[0]
             self.b = bstf[1]
-            print(bt, bst)
+            print(bt, 'train', train_loss[bt], 'valid', valid_loss[bt])
         else:
             self.w = w
             self.b = b

@@ -110,7 +110,7 @@ class LogisticRegression:
 
                 if valid_acc[-1] > bst:
                     bst = valid_acc[-1]
-                    bstf = (w, b)
+                    bstf = (w.copy(), b.copy())
                     bt = epoch
 
             if (epoch + 1) % print_every == 0:
@@ -120,12 +120,12 @@ class LogisticRegression:
                     print(epoch + 1, 'train', train_loss[-1], train_acc[-1])
 
         if X_valid is not None:
-            self.w = bstf[0]
-            self.b = bstf[1]
-            print(bt, 'train', train_loss[bt], 'valid', valid_loss[bt])
+            self.w = bstf[0].copy()
+            self.b = bstf[1].copy()
+            print(bt, 'train', train_acc[bt], 'valid', valid_acc[bt])
         else:
-            self.w = w
-            self.b = b
+            self.w = w.copy()
+            self.b = b.copy()
         return train_loss, train_acc, valid_loss, valid_acc
 
 model = LogisticRegression()

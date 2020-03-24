@@ -15,7 +15,7 @@ b = np.load('hw2_generative/b.npy')
 X = pd.read_csv(sys.argv[5], index_col=['id'])
 
 # predict
-print(w.shape, X.shape)
+#print(w.shape, X.shape)
 y = np.round(
     sigmoid(X @ w + b, min_clip_value, max_clip_value)
 ).astype(np.int)

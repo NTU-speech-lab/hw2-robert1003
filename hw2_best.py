@@ -41,7 +41,7 @@ X[three_or_more] = (X[three_or_more] - mean) / std
 X = X.to_numpy().astype('float32')
 
 # predict
-print(w.shape, X.shape)
+#print(w.shape, X.shape)
 y = np.round(
     sigmoid(X @ w + b, min_clip_value, max_clip_value)
 ).astype(np.int)
